@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflux web designer</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+      
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        p{
+            font-family:cursive
+        }
+
+        .clr {
+            clear: both;
+        }
+        li,i{
+            cursor: pointer;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            background-image: url(image/page-bg.jpg);
+            background-size: 100%;
+        }
+
+        .side_menu {
+            height: 130vh;
+            width: 290px;
+            position: fixed;
+            left: 6%;
+            background-color: rgb(164, 63, 73);
+            text-align: center;
+            color: white;
+        }
+        .side_menu p{
+            font-size: 15px;
+        }
+        .side_menu h5{
+            font-size: 30px;
+        }
+        .side_menu i{
+            font-size: 13px;
+        }
+        .side_menu ul{
+            margin-top: 20%;
+        }
+       .side_menu ul li{
+           list-style: none;
+           padding: 7%;
+           background-color: rgb(164, 63, 73);
+           color:white ;
+           border-bottom: 1px solid white;
+           border-top: 1px solid white;
+           font-family: cursive;
+       }
+       .side_menu  li:hover{
+           background-color: white;
+           color: rgb(164, 63, 73);
+       }
+       .icon{
+           margin-top: 14%;
+       }
+       .icon i{
+           margin-left: .5%;
+           /* border:1px solid black; */
+           background-color: rgba(15, 15, 15,0.30);
+           padding:3%;
+       }
+       .icon i:hover{
+           background-color:rgba(15, 15, 15,0.60);
+       }
+
+        .content_section {
+            height: 100vh;
+            width: 70%;
+            float: right;
+            /* background-color: blue; */
+            padding-right: 5%;
+            overflow: scroll;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .box1 {
+            position: relative;
+            height: 340px;
+            width: 49%;
+            /* background-color: red; */
+            float: left;
+            margin-left: 1%;
+            margin-top: 1%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 9%;
+            color: white;
+
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 9%;
+            color: white;
+            margin-left: 2%;
+
+        }
+
+        #small_line {
+            height: 3px;
+            border-width: 0;
+            background-color: rgb(164, 63, 73);
+            width: 8%;
+            margin-left: 46%;
+            margin-top: .5%;
+        }
+
+        #line {
+            height: 2px;
+            border-width: 0;
+            background-color: grey;
+            width: 100%;
+
+            margin-top: 6%;
+        }
+
+        #center_text {
+            text-align: center;
+            font-size: 19px;
+            padding-left: 4%;
+            padding-right: 4%;
+            margin-top: 2%;
+            color: white;
+        }
+
+        .image_text_sec {
+            margin-top: 7%;
+        }
+
+        #text {
+            font-size: 16px;
+            padding-left: 2%;
+            margin-top: 4%;
+            color: white;
+        }
+
+        button {
+            height: 50px;
+            width: 140px;
+            margin-top: 5%;
+            margin-left: 2%;
+            color: rgb(164, 63, 73);
+            font-size: 15px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+        button:hover{
+            background-color: rgba(253, 252, 252, 0.70);
+        }
+        #left_text {
+            padding-left: 8%;
+        }
+
+        .box1 i,
+        h3,
+        p {
+            padding-left: 9%;
+            margin-bottom: 3%;
+            margin-top: 5%;
+        }
+
+        .nav {
+            width: 30%;
+            margin: auto;
+            /* background-color: pink; */
+            margin-top: 7%;
+            margin-bottom: 2%;
+        }
+
+        .nav ul li {
+            display: inline;
+            list-style: none;
+            margin-left: 5%;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+        }
+
+        a:hover {
+            border-bottom: 3px solid rgb(164, 63, 73);
+            color: rgb(164, 63, 73);
+        }
+
+        #in {
+            width: 49.5%;
+        }
+
+        #msg {
+            width: 100%;
+            height: 150px;
+        }
+
+        #sub {
+            width: 100%;
+            height: 40px;
+        }
+
+        input {
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.10);
+            margin-top: 3%;
+        }
+
+        #btn {
+            height: 40px;
+            width: 150px;
+            background-color: white;
+            color: rgb(164, 63, 73);
+            margin-left: 45%;
+
+        }
+
+        .style {
+            background-color: rgba(253, 252, 252, 0.1);
+            color: white;
+        }
+
+        .effect {
+            z-index: +1;
+            position: absolute;
+            height: 280px;
+            width: 85%;
+            left: 7.4%;
+            top: 9%;
+            background-color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            display: none;
+        }
+
+        .effect i,
+        p,
+        h4 {
+            padding-top: 4%;
+            padding-left: 0%;
+
+        }
+
+        .effect p {
+            font-size: 20px;
+        }
+
+        .effect h4,
+        i {
+            font-size: 40px;
+        }
+       .map{
+           width:1000px;
+           height: 170px;
+           
+       }
+       /* .style i{
+           padding-left:2%;
+           border: 2px solid white;
+           border-radius: 50%;
+       } */
+      
+    </style> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="side_menu">
+            <img src="image/author-image-modified.png" height="170px" width="160px" style="margin-top: 20%;" alt="">
+            <h5>Reflux Me</h5>
+            <p>web designer</p>
+            <ul>
+                <li style="  background-color: white;
+                color: rgb(164, 63, 73);">About Me</li>
+                <li>What I’m good at?</li>
+                <li>My Work</li>
+                <li>Contact me</li>
+            </ul>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class=" fas fa-volleyball-ball"></i>
+                <i class="fas fa-wifi"></i>
+            </div>
+        </div>
+        <!-- content started -->
+        <div class="content_section">
+            <!-- 1st section -->
+            <div class="heading1">
+                <h1>About me </h1>
+                <hr id="small_line">
+                <p id="center_text">This is a Bootstrap v4.2.1 CSS Template for you. Edit and use this layout for your
+                    site. Updated on 21 May 2019 for repeated main menu HTML code.</p>
+            </div>
+            <div class="image_text_sec">
+                <div style="float: left" class="box1">
+                    <img src="image/left-image.jpg" alt="" height="340px" width="100%">
+                </div>
+                <div style="float: right" class="box1">
+                    <h2>Reflux HTML CSS Template</h2>
+                    <p id="text">Donec tristique feugiat lacus, at sollicitudin nunc euismod sed. Mauris viverra, erat
+                        non sagittis gravida, elit dui mollis ante, sit amet eleifend purus ligula eget eros. Sed
+                        tincidunt quam vitae neque pharetra dignissim eget ut libero.</p>
+                    <button>READ MORE</button>
+                </div>
+            </div>
+            <div class="clr"></div>
+            <br>
+            <hr id="line">
+            <!-- 2nd section -->
+            <div class="image_text_sec">
+                <div style="float: left" class="box1">
+                    <h2>Sed sagittis rhoncus velit</h2>
+                    <p id="text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum fermentum eleifend nibh, vitae sodales elit finibus pretium. Suspendisse potenti. Ut sollicitudin risus a sollicitudin semper.</p>
+                    <button>READ MORE</button>
+                </div>
+                <div style="float: right" class="box1">
+                    <img src="image/right-image.jpg" alt="" height="340px" width="100%">
+                </div>
+
+            </div>
+            <br>
+            <div class="clr"></div>
+            <hr id="line">
+            <!-- 3rd section -->
+            <div class="heading1">
+                <h1>What I’m good at? </h1>
+                <hr id="small_line">
+                <p id="center_text">Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor. Vestibulum congue
+                    leo et tellus aliquam, eu viverra nulla semper. Nullam eu faucibus diam. Donec eget massa ante.</p>
+            </div>
+            <!-- cards -->
+            <div class="box1 style" id="c1">
+                <i class="fas fa-lightbulb fa-3x"></i>
+                <h3>HTML5 & CSS3</h3>
+                <p id="left_text">Phasellus non convallis dolor. Integer tempor hendrerit arcu at bibendum. Sed ac ante
+                    non metus
+                    vehicula congue quis eget eros.</p>
+            </div>
+            <div class="box1 style" id="c2" >
+                <i class="fas fa-hand-holding-heart fa-3x"></i>
+                <h3>Creative Ideas</h3>
+                <p id="left_text">Proin lacus massa, eleifend sed fermentum in, dignissim vel metus. Nunc accumsan leo
+                    nec felis
+                    porttitor, ultricies faucibus purus mollis.</p>
+            </div>
+            <div class="box1 style" id="c3">
+                <i class="fas fa-cog fa-3x"></i>
+                <h3>Easy Customize</h3>
+                <p id="left_text">Integer suscipit condimentum aliquet. Nam quis risus metus. Nullam faucibus quam eget
+                    arcu
+                    pretium tincidunt. Nam libero dui.</p>
+            </div>
+            <div class="box1 style" id="c4">
+                <i class="fas fa-chart-pie fa-3x"></i>
+                <h3>Admin Dashboard</h3>
+                <p id="left_text">Vivamus et dui a massa venenatis fringilla. Proin lacus massa, eleifend sed fermentum
+                    in,
+                    dignissim vel metus. Nunc accumsan leo nec felis porttitor.</p>
+
+            </div>
+            <div class="clr"></div>
+            <hr id="line">
+            <!-- 4th section -->
+
+            <div class="heading1">
+                <h1>My Work </h1>
+                <hr id="small_line">
+                <p id="center_text">Aenean sollicitudin ex mauris, lobortis lobortis diam euismod sit amet. Duis ac
+                    elitvulputate, lobortis arcu quis, vehicula mauris.</p>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li id="all" onclick="show(0)"><a href="#" style="border-bottom: 3px solid rgb(164, 63, 73);">All</a></li>
+                    <li id="pp" onclick="show(1)"><a href="#">People</a></li>
+                    <li id="na" onclick="show(2)"><a href="#">Nature</a></li>
+                    <li id="ani" onclick="show(3)"><a href="#">Animals</a></li>
+                </ul>
+            </div>
+            <div class="box1" id="b1">
+                <img src="image/portfolio-01.jpg" alt="" height="340px" width="100%">
+                <div id="e1" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>First Title</h4>
+                    <p><em>free to use our template</em></p>
+                </div>
+            </div>
+            <div class="box1" id="b2">
+                <img src="image/portfolio-02.jpg" alt="" height="340px" width="100%">
+                <div id="e2" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>Second Title</h4>
+                    <p><em>please tell your friends </em></p>
+                </div>
+            </div>
+            <div class="box1" id="b3">
+                <img src="image/portfolio-03.jpg" alt="" height="340px" width="100%">
+                <div id="e3" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>Title Third</h4>
+                    <p><em>customize anything</em></p>
+                </div>
+            </div>
+            <div class="box1" id="b4">
+                <img src="image/portfolio-04.jpg" alt="" height="340px" width="100%">
+                <div id="e4" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>Four Title</h4>
+                    <p><em>Re-distribution not allowed</em></p>
+                </div>
+            </div>
+            <div class="box1" id="b5">
+                <img src="image/portfolio-05.jpg" alt="" height="340px" width="100%">
+                <div id="e5" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>Fifth Title</h4>
+                    <p><em>Be unique </em></p>
+                </div>
+            </div>
+            <div class="box1" id="b6">
+                <img src="image/portfolio-06.jpg" alt="" height="340px" width="100%">
+                <div id="e6" class="effect">
+                    <i class="fas fa-search"></i>
+                    <h4>Title Sixth</h4>
+                    <p><em>Nothing To Lose</em></p>
+                </div>
+            </div>
+
+            <div class="clr"></div>
+            <hr id="line">
+            <!-- 4th section -->
+
+            <div class="heading1">
+                <h1>Contact Me </h1>
+                <hr id="small_line">
+                <p id="center_text">Fusce eget nibh nec justo interdum condimentum. Morbi justo ex, efficitur at ante
+                    ac, tincidunt maximus ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+           
+            <div class="input_field">
+                <input type="text" placeholder="Your Name" id="in">
+                <input type="email" placeholder="Your Email" id="in">
+                <input type="text" placeholder="Subject" id="sub">
+                <input type="text" placeholder="message" id="msg">
+                <input type="button" value="Send Message" id="btn">
+            </div>
+            <div class="map">
+                <h1>GET INTO DIRECTION :</h1>
+                <br><br>
+                <div class="mapouter"><div class="gmap_canvas"><iframe width="1000" height="385" id="gmap_canvas" src="https://maps.google.com/maps?q=ghaziabad&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123 movies</a><br><style>.mapouter{position:relative;text-align:right;height:385px;width:1000px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:385px;width:1000px;}</style></div></div>
+            </div>
+            <br>
+            <div class="clr"></div>
+
+
+
+
+
+            <!--  -->
+        </div>
+    </div>
+
+
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function show(v) {
+            if (v == 0) {
+                document.getElementById('b1').style.display = 'block';
+                document.getElementById('b2').style.display = 'block';
+                document.getElementById('b3').style.display = 'block';
+                document.getElementById('b4').style.display = 'block';
+                document.getElementById('b5').style.display = 'block';
+                document.getElementById('b6').style.display = 'block';
+            }
+            else if (v == 1) {
+                document.getElementById('b1').style.display = 'none';
+                document.getElementById('b2').style.display = 'none';
+                document.getElementById('b3').style.display = 'none';
+                document.getElementById('b4').style.display = 'none';
+                document.getElementById('b5').style.display = 'block';
+                document.getElementById('b6').style.display = 'block';
+            }
+            else if (v == 2) {
+                document.getElementById('b1').style.display = 'none';
+                document.getElementById('b2').style.display = 'none';
+                document.getElementById('b3').style.display = 'block';
+                document.getElementById('b4').style.display = 'block';
+                document.getElementById('b5').style.display = 'none';
+                document.getElementById('b6').style.display = 'none';
+            }
+            else if (v == 3) {
+                document.getElementById('b1').style.display = 'block';
+                document.getElementById('b2').style.display = 'block';
+                document.getElementById('b3').style.display = 'none';
+                document.getElementById('b4').style.display = 'none';
+                document.getElementById('b5').style.display = 'none';
+                document.getElementById('b6').style.display = 'none';
+            }
+        }
+        // hover effect
+        $(document).ready(function () {
+            $("#b1").hover(function () {
+                $("#e1").slideToggle();
+            })
+            $("#b2").hover(function () {
+                $("#e2").slideToggle();
+            })
+            $("#b3").hover(function () {
+                $("#e3").slideToggle();
+            })
+            $("#b4").hover(function () {
+                $("#e4").slideToggle();
+            })
+            $("#b5").hover(function () {
+                $("#e5").slideToggle();
+            })
+            $("#b6").hover(function () {
+                $("#e6").slideToggle();
+            })
+        })
+        // cards hover
+        $(document).ready(function(){
+            $("#c1").mousemove(function(){
+                $("#c1").css("background-color","white");
+                $("#c1").css("color","black");
+                
+            })
+        })
+        // function perform(){
+        //     document.getElementById('c2').style.backgroundColor="white";
+        //     document.getElementById('c2').style.Color="black";
+        // }
+        // $(document).ready(function(){
+        //     $("#all").click(function(){
+        //         $("#b1").show().fadeToggle();
+        //         $("#b2").show().fadeToggle();
+        //         $("#b3").show().fadeToggle();
+        //         $("#b4").s
+        //         $("#b5").show().fadeToggle();
+        //         $("#b6").show().fadeToggle();
+        //     })
+        //     $("#pp").click(function(){
+        //         $("#b1").fadeToggle();
+        //         $("#b2").fadeToggle();
+        //         $("#b3").hide();
+        //         $("#b4").hide();
+        //         $("#b5").hide();
+        //         $("#b6").hide();
+        //     })
+        // })
+
+    </script>
+</body>
+
+</html>
